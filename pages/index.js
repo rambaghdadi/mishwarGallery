@@ -1,4 +1,3 @@
-import Head from "next/head"
 import Navbar from "../components/GeneralComponents/Navbar/Navbar"
 import Hero from "../components/HomeComponents/Hero/Hero"
 import ExploreCollection from "../components/HomeComponents/ExploreCollection/ExploreCollection"

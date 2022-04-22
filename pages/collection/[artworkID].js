@@ -4,7 +4,7 @@ import Navbar from "../../components/GeneralComponents/Navbar/Navbar"
 import ArtworkDetails from "../../components/CollectionComponents/ArtworkDetails/ArtworkDetails"
 import Footer from "../../components/GeneralComponents/Footer/Footer"
 import { useState } from "react"
-import { Modal, Button, Group } from "@mantine/core"
+import { Modal } from "@mantine/core"
 import Form from "../../components/CollectionComponents/Form/Form"
 import NotificationAlert from "../../components/GeneralComponents/NotificationAlert/NotificationAlert"
 

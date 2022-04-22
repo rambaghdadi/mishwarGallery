@@ -12,6 +12,7 @@ html {
 body {
 	font-family: "Poppins", serif;
 	color: #333;
+	position: relative;
 
 	--accent-color: rgb(184, 157, 79);
 	--main-font: "Poppins", serif;
@@ -21,4 +22,11 @@ body {
 a {
 	color: inherit;
 	text-decoration: none;
+}
+
+.loader {
+	position: absolute;
+	top: 50vh;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }

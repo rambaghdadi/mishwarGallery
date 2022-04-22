@@ -4,10 +4,34 @@ import Script from "next/script"
 import { AuthProvider } from "../context/AuthContext"
 import ProtectedRoute from "../components/AuthComponents/ProtectedRoute"
 import { useRouter } from "next/router"
+import { useEffect, useState } from "react"
+import { Loader } from "@mantine/core"
 
 function MyApp({ Component, pageProps: { ...pageProps } }) {
 	const authRequired = ["/admin"]
+	const [loading, setLoading] = useState(false)
 	const router = useRouter()
+
+	useEffect(() => {
+		function start() {
+			console.log("Start")
+			setLoading(true)
+		}
+		function end() {
+			console.log("Finished")
+			setLoading(false)
+		}
+		router.events.on("routeChangeStart", start)
+		router.events.on("routeChangeComplete", end)
+		router.events.on("routeChangeError", end)
+
+		return () => {
+			router.events.off("routeChangeStart", start)
+			router.events.off("routeChangeComplete", end)
+			router.events.off("routeChangeError", end)
+		}
+	}, [])
+
 	return (
 		<>
 			<Head>
@@ -26,8 +50,15 @@ function MyApp({ Component, pageProps: { ...pageProps } }) {
 			<AuthProvider>
 				{authRequired.includes(router.pathname) ? (
 					<ProtectedRoute>
-						<Component {...pageProps} />{" "}
+						<Component {...pageProps} />
 					</ProtectedRoute>
+				) : loading ? (
+					<Loader
+						className={"loader"}
+						color="yellow"
+						size="xl"
+						variant="dots"
+					/>
 				) : (
 					<Component {...pageProps} />
 				)}
