@@ -107,7 +107,12 @@ export default function AllArtworks(props) {
 		<tr key={artwork.id}>
 			<td>{artwork.data.dateAdded.split("T")[0]}</td>
 			<td>
-				<Image src={artwork.data.imgURL} width={60} />
+				<Image
+					src={
+						artwork.data.imgURL ? artwork.data.imgURL : "/images/default.jpeg"
+					}
+					width={60}
+				/>
 			</td>
 			<td>{artwork.data.artworkName}</td>
 			<td>{artwork.data.artworkArtist.join(", ")}</td>

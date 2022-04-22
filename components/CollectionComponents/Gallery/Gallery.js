@@ -46,7 +46,7 @@ export default function Gallery(props) {
 						key={x.id}
 					>
 						<Image
-							src={x.data.imgURL}
+							src={x.data.imgURL ? x.data.imgURL : "/images/default.jpeg"}
 							height={800}
 							width={800}
 							onClick={() => {
