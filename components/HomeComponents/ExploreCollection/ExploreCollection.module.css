@@ -52,6 +52,7 @@
 	}
 	.collection {
 		display: flex;
+		justify-content: center;
 		gap: 5rem;
 	}
 
@@ -64,5 +65,6 @@
 	}
 	.button {
 		align-self: center;
+		font-size: 1.6rem;
 	}
 }

@@ -5,17 +5,15 @@ import { db } from "../../../pages/api/firebase/firebase"
 import { collection } from "firebase/firestore"
 import useSnapshot from "../../../hooks/useSnapshot"
 
-export default function ExploreCollection() {
+export default function ExploreCollection(props) {
 	const router = useRouter()
-	const artworkCollection = collection(db, "artworks")
-	const colls = useSnapshot(artworkCollection)
 
 	return (
 		<section className={classes.section}>
 			<main className={classes.main}>
 				<h1>Explore the Collection</h1>
 				<div id="collection" className={classes.collection}>
-					{colls
+					{props.artworks
 						.filter((img) => img.data.artworkArtist.includes("Abdullah Murad"))
 						.slice(0, 3)
 						.map((artwork) => {

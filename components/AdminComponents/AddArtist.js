@@ -32,8 +32,6 @@ export default function AddArtist(props) {
 
 	function imgHandler(e) {
 		let selectedFile = e.target.files[0]
-		console.log(selectedFile)
-
 		if (selectedFile && type.includes(selectedFile.type)) {
 			setImgFile(selectedFile)
 			setError("")

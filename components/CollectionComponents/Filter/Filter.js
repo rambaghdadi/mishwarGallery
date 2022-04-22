@@ -60,27 +60,33 @@ export default function Filter(props) {
 					))}
 				</select>
 				<ul>
-					<option
+					<button
 						className={
 							selectedArtist === "all" || !selectedArtist
 								? `${classes.selected}`
 								: ""
 						}
-						onClick={filterHandler}
+						onClick={(e) => {
+							e.preventDefault()
+							filterHandler(e)
+						}}
 						value="all"
 					>
 						All
-					</option>
+					</button>
 
 					{artists.map((artist) => (
-						<option
-							onClick={filterHandler}
+						<button
+							onClick={(e) => {
+								e.preventDefault()
+								filterHandler(e)
+							}}
 							key={artist}
 							value={artist}
 							className={artist === selectedArtist ? `${classes.selected}` : ""}
 						>
 							{artist}
-						</option>
+						</button>
 					))}
 				</ul>
 			</form>

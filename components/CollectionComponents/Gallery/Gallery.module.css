@@ -16,7 +16,7 @@
 	transform: scale(140%) rotate(10deg);
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 700px) {
 	.main {
 		gap: 8rem;
 		max-width: 900px;
@@ -30,9 +30,5 @@
 		justify-items: center;
 		align-items: center;
 		gap: 1rem;
-	}
-
-	.gallery img {
-		/* width: 50% !important; */
 	}
 }

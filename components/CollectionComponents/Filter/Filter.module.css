@@ -1,7 +1,3 @@
-.main {
-	/* padding: 0 2rem; */
-}
-
 .form select {
 	width: 100%;
 	padding: 0.5rem 1rem;
@@ -23,8 +19,6 @@
 }
 
 @media (min-width: 700px) {
-	.main {
-	}
 	.form {
 		/* display: flex;
 		align-items: center; */
@@ -36,6 +30,7 @@
 	.form select {
 		display: none;
 	}
+
 	.form ul {
 		padding: 0 5rem;
 		display: flex;
@@ -47,13 +42,16 @@
 		flex-wrap: wrap;
 	}
 
-	.form ul option {
+	.form ul button {
 		background-color: rgba(172, 146, 0, 0.327);
 		border-radius: 10px;
-		padding: 0.5rem 1rem;
+		padding: 0.7rem 1.2rem;
 		cursor: pointer;
 		user-select: none;
+		border: none;
 		transition: all 0.2s;
+		font-family: var(--main-font);
+		font-size: 1.4rem;
 	}
 
 	.form ul option:active {

@@ -16,7 +16,6 @@ export default function Artwork({ artwork }) {
 	const artworkCollection = collection(db, "artworks")
 	const colls = useSnapshot(artworkCollection)
 	const messageCollection = collection(db, "artworkEnquiry")
-	console.log(colls)
 
 	async function formHandler(data) {
 		try {

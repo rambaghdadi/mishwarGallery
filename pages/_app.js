@@ -14,11 +14,9 @@ function MyApp({ Component, pageProps: { ...pageProps } }) {
 
 	useEffect(() => {
 		function start() {
-			console.log("Start")
 			setLoading(true)
 		}
 		function end() {
-			console.log("Finished")
 			setLoading(false)
 		}
 		router.events.on("routeChangeStart", start)
