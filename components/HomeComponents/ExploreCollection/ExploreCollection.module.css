@@ -47,6 +47,8 @@
 @media (min-width: 800px) {
 	.main {
 		gap: 6rem;
+		padding-left: 8rem;
+		padding-right: 8rem;
 	}
 	.collection {
 		display: flex;

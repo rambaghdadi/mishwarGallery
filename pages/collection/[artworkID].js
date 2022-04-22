@@ -7,12 +7,16 @@ import { useState } from "react"
 import { Modal } from "@mantine/core"
 import Form from "../../components/CollectionComponents/Form/Form"
 import NotificationAlert from "../../components/GeneralComponents/NotificationAlert/NotificationAlert"
+import useSnapshot from "../../hooks/useSnapshot"
+import RelatedArtworks from "../../components/CollectionComponents/RelatedArtworks/RelatedArtworks"
 
 export default function Artwork({ artwork }) {
 	const [opened, setOpened] = useState(false)
 	const [notification, setNotification] = useState(false)
-
+	const artworkCollection = collection(db, "artworks")
+	const colls = useSnapshot(artworkCollection)
 	const messageCollection = collection(db, "artworkEnquiry")
+	console.log(colls)
 
 	async function formHandler(data) {
 		try {
@@ -69,6 +73,14 @@ export default function Artwork({ artwork }) {
 				artworkWidth={artwork.artworkWidth}
 				artworkHeight={artwork.artworkHeight}
 				onClick={() => setOpened(true)}
+			/>
+			<RelatedArtworks
+				relatedImages={colls
+					.filter((imgs) =>
+						imgs.data.artworkArtist.includes("Mishwar Collection")
+					)
+					.filter((hero) => hero.data.artworkName !== artwork.artworkName)
+					.slice(0, 3)}
 			/>
 			<Footer></Footer>
 		</>

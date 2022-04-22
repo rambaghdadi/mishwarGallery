@@ -13,6 +13,14 @@
 	gap: 2rem;
 }
 
+.imgContainer img {
+	border: 4px solid black !important;
+}
+
+.main h1 {
+	font-size: 3rem;
+}
+
 .main p {
 	font-size: 1.6rem;
 }
@@ -21,7 +29,7 @@
 	.main {
 		flex-direction: row;
 		align-items: center;
-		margin: 20rem auto;
+		margin: 20rem auto 10rem auto;
 		padding: 0 6rem;
 		gap: 10rem;
 	}
