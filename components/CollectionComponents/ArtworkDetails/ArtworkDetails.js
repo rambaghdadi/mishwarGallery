@@ -6,12 +6,12 @@ export default function ArtworkDetails(props) {
 	return (
 		<div className={classes.main}>
 			<div className={classes.imgContainer}>
-				<img
+				<Image
+					className={classes.img}
 					src={props.src}
-					height={"100%"}
-					width={"100%"}
-					alt={props.alt}
-					// layout={"responsive"}
+					width={props.artworkWidth}
+					height={props.artworkHeight}
+					layout="responsive"
 				/>
 			</div>
 			<div className={classes.text}>

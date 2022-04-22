@@ -7,10 +7,6 @@
 	gap: 3rem;
 }
 
-.imgContainer {
-	width: 100%;
-}
-
 .text {
 	display: flex;
 	flex-direction: column;
@@ -21,7 +17,7 @@
 	font-size: 1.6rem;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 850px) {
 	.main {
 		flex-direction: row;
 		align-items: center;
@@ -36,8 +32,7 @@
 	}
 
 	.imgContainer {
-		width: 50%;
-		flex: 1 0 auto !important;
+		flex: 0 0 40%;
 	}
 
 	.text h1 {
