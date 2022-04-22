@@ -20,9 +20,8 @@ export default function ExploreCollection() {
 						.slice(0, 3)
 						.map((artwork) => {
 							return (
-								<div>
+								<div key={artwork.id}>
 									<Image
-										key={artwork.id}
 										onClick={() => {
 											router.push(`collection/${artwork.id}`)
 										}}
