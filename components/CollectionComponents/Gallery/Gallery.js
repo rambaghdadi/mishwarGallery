@@ -8,11 +8,11 @@ import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 
-export default function Gallery() {
-	const artworkCollection = collection(db, "artworks")
+export default function Gallery(props) {
 	const [artworks, setArtworks] = useState([])
-	const colls = useSnapshot(artworkCollection)
 	const router = useRouter()
+
+	let colls = props.art
 
 	useEffect(() => {
 		selectedArtistHandler("all")
@@ -59,20 +59,3 @@ export default function Gallery() {
 		</div>
 	)
 }
-
-// export async function getServerSideProps() {
-// 	let col
-// 	try {
-// 		const artworkCollection = collection(db, "artworks")
-// 		const colls = useSnapshot(artworkCollection)
-// 		col = { ...colls }
-// 	} catch (error) {
-// 		console.log(error)
-// 	}
-
-// 	return {
-// 		props: {
-// 			col,
-// 		},
-// 	}
-// }
