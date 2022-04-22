@@ -4,7 +4,6 @@ import ExploreCollection from "../components/HomeComponents/ExploreCollection/Ex
 import Footer from "../components/GeneralComponents/Footer/Footer"
 import { collection, getDocs } from "firebase/firestore"
 import { db } from "./api/firebase/firebase"
-import useSnapshot from "../hooks/useSnapshot"
 
 export default function Home({ artworks }) {
 	return (
