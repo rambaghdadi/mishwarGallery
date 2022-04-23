@@ -65,7 +65,7 @@ export default function Artwork({ artwork }) {
 			/>
 			<Navbar></Navbar>
 			<ArtworkDetails
-				src={artwork.imgURL}
+				src={artwork.imgURL ? artwork.imgURL : "images/default.jpeg"}
 				name={artwork.artworkName}
 				artist={artwork.artworkArtist.filter((x) => x !== "Mishwar Collection")}
 				description={artwork.artworkDescription}
